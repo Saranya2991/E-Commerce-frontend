@@ -65,7 +65,7 @@ const [products, setProducts] = useState([]);
   // Fetch products from backend
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/product"); // backend route
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/product`); // backend route
       console.log(res.data);
       setProducts(res.data);
       setLoading(false);

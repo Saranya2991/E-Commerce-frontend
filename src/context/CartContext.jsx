@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     if (!userId) return;
     axios
-      .get(`http://localhost:5000/api/cart/${userId}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/cart/${userId}`)
       .then((res) => setCart(res.data.items || []))
       .catch((err) => console.error(err));
   }, [userId]);
@@ -35,7 +35,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = async (product) => {
     if (!userId) return alert("Please login first");
     try {
-      const res = await axios.post("http://localhost:5000/api/cart/add", {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/cart/add`, {
         userId,
         product
       });
@@ -49,7 +49,7 @@ export const CartProvider = ({ children }) => {
     if (!userId) return;
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/cart/remove/${userId}/${productId}`
+       `${import.meta.env.VITE_API_URL}/api/cart/remove/${userId}/${productId}`
       );
       setCart(res.data.items);
     } catch (err) {
@@ -61,7 +61,7 @@ export const CartProvider = ({ children }) => {
   if (!userId) return;
 
   try {
-    const res = await fetch("http://localhost:5000/api/cart/update", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/cart/update`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId, productId, action }),

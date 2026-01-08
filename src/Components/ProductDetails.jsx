@@ -13,10 +13,8 @@ function ProductDetails() {
   useEffect(() => {
   const fetchProduct = async () => {
     try {
-      const res = await axios.get(
-        `http://localhost:5000/product/${id}`
-      );
-      setProduct(res.data); // backend already returns one product
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/product/${id}`);
+      setProduct(res.data);
     } catch (err) {
       console.error("Error fetching product", err);
       setProduct(null);
