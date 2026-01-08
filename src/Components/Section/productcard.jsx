@@ -6,8 +6,8 @@ function Productcard({image,title,price,product}){
     const { addToCart } = useCart();
     const navigate = useNavigate();
     return(
-        <div onClick={() => navigate(`/product/${product._id}`)} className="border border-green-300 shadow-lg text-center p-4 mt-8 rounded">
-        <img src={image} className="w-full h-60 object-contain rounded-2xl"/>
+        <div className="border border-green-300 shadow-lg text-center p-4 mt-8 rounded">
+        <img onClick={() => navigate(`/product/${product._id}`)} src={image} className="w-full h-60 object-contain rounded-2xl"/>
         <h1 className="font-bold text-xl mt-1">{title}</h1>
         <p className="font-semibold text-lg mt-1">₹{price}</p>
         <button  onClick={() => addToCart(product)} className="text-white bg-green-500 rounded p-3 font-bold mt-1 px-4">Add Cart</button>
