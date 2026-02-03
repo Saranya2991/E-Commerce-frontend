@@ -13,7 +13,7 @@ function AddCart() {
     });
   }, []);
   return (
-    <div className="mt-24 h-full p-6">
+    <div className="mt-24 min-h-screen p-6">
       <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
 
       {cart.length === 0 && <p>Your cart is empty</p>}
