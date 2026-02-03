@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useEffect } from "react";
 
 function AddCart() {
   const { cart, removeFromCart, updateQuantity } = useCart();
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
+    useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
-    <div className="mt-24 h-screen p-6">
+    <div className="mt-24 h-full p-6">
       <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
 
       {cart.length === 0 && <p>Your cart is empty</p>}
