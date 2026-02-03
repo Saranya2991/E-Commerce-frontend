@@ -11,6 +11,7 @@ function ProductDetails() {
   const navigate = useNavigate(); 
 
   useEffect(() => {
+    window.scrollTo(0, 0);
   const fetchProduct = async () => {
     try {
       const res = await axios.get(`${import.meta.env.VITE_API_URL}/product/${id}`);
@@ -27,8 +28,8 @@ function ProductDetails() {
 }, [id]);
 
 
-  if (loading) return <p className="mt-24 text-center">Loading...</p>;
-  if (!product) return <p className="mt-24 text-center">Product not found</p>;
+  if (loading) return <p className="mt-24 text-center h-screen">Loading...</p>;
+  if (!product) return <p className="mt-24 text-center h-screen">Product not found</p>;
 
   return (
     <div className="mt-24 p-6 flex justify-center">

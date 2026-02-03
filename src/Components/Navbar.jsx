@@ -117,10 +117,10 @@ function Navbar(){
       
             {isOpen && (
         <ul className="absolute left-0 top-full w-full bg-cyan-800 lg:hidden flex flex-col gap-3 px-5 py-4 shadow-lg">
-          <Link to="/addcart" className="relative">
-          <FaShoppingCart className="text-3xl cursor-pointer ml-[280px] md:ml-[345px]" />
+          <Link to="/addcart" className="relative" onClick={() => setIsOpen(false)}>
+          <FaShoppingCart className="text-3xl cursor-pointer ml-[175px] sm:ml-[280px] md:ml-[345px]" />
           {cart.length > 0 && (
-        <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-sm">
+        <span className="absolute -top-2 right-40 bg-red-500 text-white rounded-full px-2 text-sm">
           {cart.length}
         </span>
       )}

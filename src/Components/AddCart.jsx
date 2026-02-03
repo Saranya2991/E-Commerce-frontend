@@ -21,7 +21,7 @@ function AddCart() {
           <div>
             <h2 className="font-bold">{item.title}</h2>
             <p>
-              ₹{item.price} × {item.quantity}
+              ₹{item.price} * {item.quantity}
             </p>
           </div>
 
@@ -30,7 +30,7 @@ function AddCart() {
               onClick={() => updateQuantity(item.productId.toString(), "decrease")}
               className="px-3 py-1 bg-gray-300 rounded"
             >
-              −
+              -
             </button>
 
             <span className="font-bold">{item.quantity}</span>
@@ -52,11 +52,13 @@ function AddCart() {
       ))}
 
       <h2 className="text-xl font-bold mt-4">Total: ₹{total}</h2>
+      {cart.length > 0 && (
       <Link to="/checkout">
         <button className="bg-green-600 text-white px-6 py-2 rounded mt-4">
           Proceed to Checkout
         </button>
       </Link>
+      )}
     </div>
   );
 }

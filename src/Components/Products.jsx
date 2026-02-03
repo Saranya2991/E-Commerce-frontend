@@ -76,6 +76,7 @@ const [products, setProducts] = useState([]);
   };
 
    useEffect(() => {
+    window.scrollTo(0, 0);
     fetchProducts();
   }, []);
 
@@ -89,8 +90,18 @@ const [products, setProducts] = useState([]);
       return 0;
     });
 
-  if (loading) return <p className="mt-8">Loading products...</p>;
-  if (!products.length) return <p className="mt-8">No products found</p>;
+ if (loading)
+  return (
+    <div className="h-screen flex items-center justify-center">
+      <p className="text-lg">Loading products...</p>
+    </div>
+  );
+  if (!products.length)
+  return (
+    <div className="h-screen flex items-center justify-center">
+      <p className="text-lg">No products found</p>
+    </div>
+  );
 
     return(
         <div className="my-20">

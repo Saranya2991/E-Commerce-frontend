@@ -17,7 +17,7 @@ function Home(){
             <h1 className="text-3xl font-bold">Fruits & Vegetables</h1>
             <p className="text-justify mt-3">Buy fresh fruits and vegetables online with ease. Our online grocery store offers a wide range of seasonal fruits, green vegetables, organic produce, and daily essentials at affordable prices. Enjoy fast delivery, secure payments, and guaranteed freshness with every order.</p>
         <div>
-            <button className="bg-green-500 text-xl font-semibold p-2 sm:mt-8 md:mt-5 rounded">
+            <button className="bg-green-500 text-xl font-semibold p-2 mt-6 sm:mt-8 md:mt-5 rounded">
                 <Link to={"/products"}>Shop Now</Link></button>
         </div>
         </div>
